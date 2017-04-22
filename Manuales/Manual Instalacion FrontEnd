@@ -1,0 +1,266 @@
+1. Actualizacion del sistema
+
+    Instalacion Minima CentOS7
+
+    yum update -y
+
+    yum install -y yum-utils
+
+    yum install -y epel-release
+
+2. Instalcion Dockers
+    https://docs.docker.com/engine/installation/linux/centos/#install-using-the-repository
+
+    Instalacion Docker
+
+    yum-config-manager \
+        --add-repo \
+        https://download.docker.com/linux/centos/docker-ce.repo
+
+
+    yum-config-manager --enable docker-ce-edge
+
+    yum install -y docker-ce
+
+    systemctl enable docker
+    systemctl start docker
+
+
+    Instalacion Docker Image Centos7
+
+    docker pull centos
+
+
+
+3  Instalacion de Guacamole
+    https://guacamole.incubator.apache.org/doc/0.9.7/gug/guacamole-docker.html
+
+    yum groupinstall 'Development Tools'
+    yum install -y tomcat
+    yum install -y wget
+    yum install -y cairo-devel libjpeg-turbo-devel libjpeg-devel\
+    libpng-devel uuid-devel freerdp-devel pango-devel libssh2-devel \
+    libtelnet-devel libvncserver-devel pulseaudio-libs-devel openssl-devel \
+    libvorbis-devel  libwebp-devel
+
+    curl -O curl -O https://www.apache.org/dist/incubator/guacamole/0.9.12-incubating/source/guacamole-server-0.9.12-incubating.tar.gz
+
+
+    mkdir -p /tmp/guacd
+    cd /tmp/guacd
+    curl -O https://www.apache.org/dist/incubator/guacamole/0.9.12-incubating/source/guacamole-server-0.9.12-incubating.tar.gz
+    curl -O https://www.apache.org/dist/incubator/guacamole/0.9.12-incubating/binary/guacamole-0.9.12-incubating.war
+    curl -O https://www.apache.org/dist/incubator/guacamole/0.9.12-incubating/binary/guacamole-auth-noauth-0.9.12-incubating.tar.gz
+
+
+    cp guacamole-0.9.12-incubating.war /var/lib/tomcat/webapps/guacamole.war
+
+
+    tar -zxf guacamole-server-0.9.12-incubating.tar.gz
+    cd guacamole-server-0.9.12-incubating
+    autoreconf -fi
+    ./configure --with-init-dir=/etc/init.d --prefix=/opt/guacd
+    make
+    make install
+
+    mkdir /etc/guacamole
+    mkdir /etc/guacamole/extensions /etc/guacamole/lib
+
+
+    cd ..
+    tar -zxf guacamole-auth-noauth-0.9.12-incubating.tar.gz
+    cp guacamole-auth-noauth-0.9.12-incubating/guacamole-auth-noauth-0.9.12-incubating.jar /etc/guacamole/extensions/
+
+
+
+    ##  Create guacamole profile dir
+    echo "\
+    #!/bin/sh
+    export GUACAMOLE_HOME=/etc/guacamole
+    " >> /etc/profile.d/guacamole.sh
+
+    ## Create guacamole.properties file
+
+    echo "\
+    #
+    # guacamole client config file
+    #
+
+    # Hostname and port of guacamole proxy
+    guacd-hostname: localhost
+    guacd-port:     4877
+    # NoAuth properties
+    noauth-config: /etc/guacamole/noauth-config.xml" >> /etc/guacamole/guacamole.properties
+
+
+    ## Create guacd.configuration file
+
+    echo "\
+    #
+    # guacd configuration file
+    #
+
+    [daemon]
+
+    pid_file = /var/run/guacd.pid
+    log_level = info
+
+    [server]
+
+    bind_host = localhost
+    bind_port = 4877" >>  /etc/guacamole/guacd.conf
+
+
+
+    # Create /etc/guacamole/noauth-config.xml
+
+    echo "\
+    <configs>
+        <config name="dummy" protocol="ssh">
+            <param name="hostname" value="localhost" />
+            <param name="port" value="22" />
+            <param name="username" value="dummy" />
+            <param name="password" value="dummy" />
+        </config>
+    </configs>" >> /etc/guacamole/noauth-config.xml
+
+
+
+    # Delete installation files
+
+    cd /tmp/; rm -rf /tmp/guacd/
+
+
+
+4 Instalacion  Aplicacion
+
+    Dependencias Linux
+    yum install python34-pip.noarch python34 git
+    yum install openssl-devel libffi-devel python34-devel
+    yum install zlib-devel bzip2-devel sqlite sqlite-devel openssl-devel
+
+
+
+    Crear directios
+    mkdir -p /opt/ConsoleVM/.ssh
+
+
+    #Upgrade pip
+    pip install --upgrade pip
+
+    #Virtual env
+    pip install virtualenv
+    virtualenv -p python3 /opt/ConsoleVM/venv
+    source /opt/ConsoleVM/venv/bin/activate
+
+
+    #Install Django Dependencies
+
+    pip install Django==1.9
+    pip install paramiko
+    pip install gunicorn
+
+
+    #Copiar ssh repository key y añadir  https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+    eval "$(ssh-agent -s)"
+    #ssh-add  ~/.ssh/id_rsa
+    ssh-add /opt/ConsoleVM/.ssh/DockerClone
+
+    #Clonar repository
+    git clone -b Release_0.1 git@github.com:susurros/DjangoWeb.git
+
+    cd DjangoWeb
+
+
+
+    #Migrar base de datos:
+    python manage.py migrate
+    python manage.py makemigrations console
+    python manage.py migrate
+
+    #crear superusuario
+    echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@uem', 'UEM2017')" | python manage.py shell
+
+
+    # VType Info
+    echo "from console.models import VType; VType.objects.create(name='ESXi',version='5.5',vendor='VW')" | python manage.py shell
+    echo "from console.models import VType; VType.objects.create(name='Zones Solaris',version='11',vendor='ZN')" | python manage.py shell
+    echo "from console.models import VType; VType.objects.create(name='Virtual Box',version='5.1',vendor='VB')" | python manage.py shell
+
+
+    #Collect static
+    echo "from django.core.management import call_command; call_command('collectstatic', verbosity=0, interactive=False)" | python manage.py shell
+
+
+6   Instal Nginx & Confiugre Unicorn
+
+    yum install nginx.x86_64
+
+    # Gunicorn service
+    echo "\
+    [Unit]
+    Description=gunicorn daemon
+    After=network.target
+
+    [Service]
+    # Update all paths below
+    # Setting provided are for reference only !
+    User=nginx
+    Group=nginx
+    WorkingDirectory=/opt/ConsoleVM
+    ExecStart=/opt/ConsoleVM/venv/bin/gunicorn --workers 3 --bind unix:/opt/ConsoleVM/DjangoWeb/run/DjangoWeb.sock --chdir /opt/ConsoleVM/DjangoWeb DjangoWeb.wsgi:application
+    [Install]
+    WantedBy=multi-user.target " >>  /etc/systemd/system/gunicorn.service
+
+
+
+    # SSL Config
+    mkdir /etc/nginx/ssl
+    cd /etc/nginx/ssl
+
+    openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx-selfsigned.key -out /etc/nginx/ssl/nginx-selfsigned.crt -subj "/C=GE/OU=UEM/CN=consolevm"
+    openssl dhparam -out /etc/nginx/ssl/dhparam.pem 2048
+
+
+
+    rm -rf /etc/nginx/nginx.conf
+    cp /opt/ConsoleVM/DjangoWeb/Setup/nginx/nginx.conf /etc/nginx.conf
+
+    #Create htdigest
+
+
+
+Crear estructura  Directorios:
+
+/opt/ConsoleVM/
+
+
+mkdir -p /opt/ConsoleVM/
+
+
+
+yum -y update
+yum install -y epel-release
+
+
+
+# Firewall rules
+
+
+# Reload Profile
+
+source /etc/profile
+
+# Inint daemons
+
+
+
+#guacd
+/etc/init.d/guacd start
+#tomcat
+systemctl start tomcat
+#DjangoAPP
+
+#nginx
+systemctl start nginx
+

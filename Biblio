@@ -1,0 +1,173 @@
+https://pypi.python.org/pypi/pyzone
+https://github.com/tmetsch/pyzone
+https://blogs.oracle.com/nike/entry/python_api_to_the_virtualbox
+
+http://pythonhosted.org/pyvbox/
+https://www.virtualbox.org/svn/vbox/trunk/src/VBox/Frontends/VBoxShell/vboxshell.py
+
+https://github.com/vmware/pyvmomi
+
+http://www.djangocheatsheet.info/2-models/4-fields/
+
+http://opentechschool.github.io/django-101/en/first_steps/views_templates.html
+
+http://www.djangobook.com/en/2.0/index.html
+https://www.fullstackpython.com/django.html
+http://gsl.mit.edu/media/programs/south-africa-summer-2015/materials/djangobook.pdf
+
+https://www.quora.com/What-are-the-best-books-for-learning-Django
+http://showmedo.com/videotutorials/django
+
+
+
+Bootstarp theme
+https://almsaeedstudio.com/themes/AdminLTE/documentation/index.html
+
+https://github.com/almasaeed2010/AdminLTE/releases
+File Hierarchy of the Source Code Package
+
+AdminLTE/
+├── dist/
+│   ├── CSS/
+│   ├── JS
+│   ├── img
+├── build/
+│   ├── less/
+│   │   ├── AdminLTE's Less files
+│   └── Bootstrap-less/ (Only for reference. No modifications have been made)
+│       ├── mixins/
+│       ├── variables.less
+│       ├── mixins.less
+└── plugins/
+    ├── All the customized plugins CSS and JS files
+
+#VBOX
+https://sandilands.info/sgordon/creating-a-virtual-network-of-linux-guests-using-virtualbox
+https://www.virtualbox.org/manual/ch08.html
+http://www.1stbyte.com/2011/02/03/how-to-remove-or-detach-dvd-from-virtualbox-machine-using-vboxmanage-command-line/
+https://insideloss.wordpress.com/2012/08/20/create-virtual-network-with-virtualbox/
+http://catlingmindswipe.blogspot.de/2012/06/how-to-virtualbox-networking-part-two.html
+https://www.pythian.com/blog/test-lab-using-virtualbox-nat-networking/
+http://packetpushers.net/oracle-virtualbox-network-modes/
+http://howtoware.blogspot.de/2012/04/oracle-vm-virtualbox-how-to-use-remote.html
+
+#IPTABLES
+http://www.thegeekstuff.com/2011/06/iptables-rules-examples/
+http://www.systutorials.com/816/port-forwarding-using-iptables/
+
+
+#PFSENSE
+https://doc.pfsense.org/index.php/Adding_Rules_With_easyrule
+https://doc.pfsense.org/index.php/How_can_I_see_the_full_PF_ruleset
+https://doc.pfsense.org/index.php/Locked_out_of_the_WebGUI
+https://blog.linuxnet.ch/pfsense-important-cli-commands/
+
+# DB RElationships
+https://docs.djangoproject.com/es/1.9/topics/db/examples/many_to_many/
+http://agiliq.com/blog/2014/04/django-backward-relationship-lookup/
+https://docs.djangoproject.com/en/dev/topics/db/queries/#following-relationships-backward
+http://django-book.blogspot.de/2012/11/relaciones-many-to-many.html
+http://codehero.co/django-desde-cero-relaciones-o-asociaciones-en-base-de-datos-parte-i/
+http://www.cristalab.com/tutoriales/python-en-la-web-con-django-v-modelo-de-datos-ii-c104165l/
+https://zbutton.wordpress.com/2009/12/10/incorporar-modelos-manytomany-al-backend-en-django/
+http://www.djangobook.com/en/2.0/chapter10.html
+https://docs.djangoproject.com/en/1.9/ref/models/instances/
+https://docs.djangoproject.com/en/1.9/ref/models/relations/
+https://docs.djangoproject.com/en/1.9/ref/models/class/
+
+#AUUTH
+https://www.rdegges.com/2010/user-authentication-with-django/
+http://www.djangobook.com/en/2.0/chapter14.html
+http://masteringdjango.com/user-authentication-in-django/
+http://www.effectivedjango.com/tutorial/authzn.html
+
+
+# Modal WIndo3ws
+https://designshack.net/tutorialexamples/modal-login-jquery/index.html
+
+# Jquery - ajax
+https://realpython.com/blog/python/django-and-ajax-form-submissions/
+http://learn.jquery.com/events/handling-events/
+https://aliteralmind.wordpress.com/2014/09/21/jquery_django_tutorial/
+http://www.tangowithdjango.com/book/chapters/ajax.html
+www.b-list.org/weblog/2006/jul/31/django-tips-simple-ajax-example-part-1/
+http://mitchfournier.com/2011/06/06/getting-started-with-ajax-in-django-a-simple-jquery-approach/
+http://seegatesite.com/create-dynamic-modal-dialog-form-in-adminlte-bootstrap-template/
+
+
+REgex
+https://www.debuggex.com/cheatsheet/regex/python
+https://regex101.com/#python
+http://www.regexplanet.com/advanced/python/index.html
+
+
+SSHKEYS:
+https://maas.ubuntu.com/docs2.0/_modules/maasserver/models/sshkey.html
+https://stackoverflow.com/questions/16216363/how-can-you-store-a-rsa-key-pair-in-a-django-model-sqlite-db
+http://blog.printf.net/articles/2008/09/15/an-ssh-public-keyserver/
+https://pypi.python.org/pypi/django-sshkey/2.2.0
+
+
+TASKS & CONFIG:
+http://www.robgolding.com/blog/2011/11/12/django-in-production-part-1---the-stack/
+http://www.robgolding.com/blog/2011/11/27/django-in-production-part-2---background-tasks/
+https://realpython.com/blog/python/asynchronous-tasks-with-django-and-celery/
+https://stackoverflow.com/questions/32618686/how-to-install-pip-in-centos-7
+
+
+ENVIRONMENT
+https://martin-thoma.com/configuration-files-in-python/
+
+LAB CONF
+https://www.digitalocean.com/community/tutorials/how-to-deploy-python-wsgi-applications-using-uwsgi-web-server-with-nginx
+
+Sesions
+http://eli.thegreenplace.net/2011/06/29/django-sessions-part-ii-how-sessions-work
+
+
+#vbox AUTH
+    An additional library called VBoxAuthSimple performs authentication against credentials configured in the "extradata" section of a virtual machine's XML settings file. This is probably the simplest way to get authentication that does not depend on a running and supported guest (see below). The following steps are required:
+
+    Enable VBoxAuthSimple with the following command:
+
+    VBoxManage setproperty vrdeauthlibrary "VBoxAuthSimple"
+    To enable the library for a particular VM, you must then switch authentication to external:
+
+    VBoxManage modifyvm "VM name" --vrdeauthtype external
+    Replace <vm> with the VM name or UUID.
+
+    You will then need to configure users and passwords by writing items into the machine's extradata. Since the XML machine settings file, into whose "extradata" section the password needs to be written, is a plain text file, VirtualBox uses hashes to encrypt passwords. The following command must be used:
+
+    VBoxManage setextradata "VM name" "VBoxAuthSimple/users/<user>" <hash>
+    Replace <vm> with the VM name or UUID, <user> with the user name who should be allowed to log in and <hash> with the encrypted password. As an example, to obtain the hash value for the password "secret", you can use the following command:
+
+    VBoxManage internalcommands passwordhash "secret"
+    This will print
+
+    2bb80d537b1da3e38bd30361aa855686bde0eacd7162fef6a25fe97bf527a25b
+    You can then use VBoxManage setextradata to store this value in the machine's "extradata" section.
+
+    As example, combined together, to set the password for the user "john" and the machine "My VM" to "secret", use this command:
+
+    VBoxManage setextradata "My VM" "VBoxAuthSimple/users/john"
+    2bb80d537b1da3e38bd30361aa855686bde0eacd7162fef6a25fe97bf527a25b
+    Finally, the "guest" authentication method performs authentication with a special component that comes with the Guest Additions; as a result, authentication is not performed on the host, but with the guest user accounts.
+
+    This method is currently still in testing and not yet supported.
+
+
+NGINX
+https://www.digitalocean.com/community/tutorials/how-to-set-up-http-authentication-with-nginx-on-ubuntu-12-10
+https://www.howtoforge.com/basic-http-authentication-with-nginx
+http://nginx.org/en/docs/http/configuring_https_servers.html
+http://nginx.org/en/docs/http/configuring_https_servers.html
+
+UWSGI
+https://gist.github.com/evildmp/3094281
+https://gist.github.com/evildmp/3094281
+
+
+
+IDEAS
+
+Clase conexion para mantener los conexiones con los VHIST Abiertas para reducir el tiempo de carga SSH. Control UPTIM

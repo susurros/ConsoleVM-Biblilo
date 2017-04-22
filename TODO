@@ -1,0 +1,31 @@
+LIST TODO:
+
+
+VBOX:
+
+5. DISK_SIZE
+6. Snapshots
+7. Modify vm
+
+
+ESX:
+1.ALL
+SNAPSHOTS
+
+
+Zones:
+1. ALL
+
+WEb:
+1.Add Installation Images
+2. Add Medium
+1.Modify From
+3.Django Authentication
+4. REMOTE ACCESS
+
+
+Upgrades:
+
+Roles definiction
+Vhost Dashboar
+Modular structure for add mor  virtualization modules

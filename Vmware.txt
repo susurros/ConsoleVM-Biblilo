@@ -1,0 +1,11 @@
+http://www.doublecloud.org/2013/11/vmware-esxi-vim-cmd-command-a-quick-tutorial/
+http://searchitchannel.techtarget.com/feature/Creation-of-virtual-machines-utilizing-command-line-tools
+http://www.tamas.io/automatic-virtual-machine-creation-from-command-line-in-vmwares-esxi/
+http://jensd.be/370/linux/create-a-new-virtual-machine-in-vsphere-with-python-pysphere-and-the-vmware-api
+http://pubs.vmware.com/vsphere-55/index.jsp?noscript=1
+https://github.com/argos83/pysphere
+https://github.com/vmware/pyvmomi   # USE THIS!!!!!
+https://github.com/vmware/pyvmomi-community-samples/tree/master/
+https://github.com/sijis/pyvmomi-examples/blob/master/create-vm.py
+http://www.slideshare.net/MichaelRice10/introduction-to-vsphere-apis-using-pyvmomi
+http://www.errr-online.com/index.php/2014/10/06/using-pyvmomi-to-get-a-list-of-all-virtual-machines-fast/

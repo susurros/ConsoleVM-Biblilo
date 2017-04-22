@@ -1,0 +1,21 @@
+Get UUID all Mahines
+
+vboxmanage list vms | cut -d " " -f2
+
+
+
+Get Name all Machines
+vboxmanage list vms | cut -d " " -f1
+
+
+
+Get UUID Running
+vboxmanage list runningvms | cut -d " " -f2
+
+Get Naeme running
+vboxmanage list runningvms | cut -d " " -f1
+
+
+startvm
+vboxmanage startvm FW --type headless
+

@@ -1,0 +1,58 @@
+Virtual BOx
+
+Listar VMs
+vboxmanage list vms
+vboxmanage list runningvms
+
+Listar OStipos
+vboxmanage list ostypes
+
+
+Crear VMs
+
+https://www.perkin.org.uk/posts/create-virtualbox-vm-from-the-command-line.html
+
+vboxmanage  createvm --name  <nombre de maquina> --ostype <tipo_OS_Var>  
+
+VBoxManage createmedium     [disk|dvd|floppy] --filename <filename>
+                            [--size <megabytes>|--sizebyte <bytes>]
+                            [--diffparent <uuid>|<filename>
+                            [--format VDI|VMDK|VHD] (default: VDI)
+                            [--variant Standard,Fixed,Split2G,Stream,ESX]
+
+
+
+vboxmanage modifyvm  <uuid|vmname> --memory  $RAM --cpus <number>]
+-bridgeadapter<1-N> none|<devicename>]
+                            [--hostonlyadapter<1-N> none|<devicename>]
+                            [--intnet<1-N> <network name>]
+                            [--nat-network<1-N> <network name>]
+                            [--nicgenericdrv<1-N> <driver>
+                            [--natnet<1-N> <network>|default]
+                            [--natsettings<1-N> [<mtu>],[<socksnd>],
+                                                [<sockrcv>],[<tcpsnd>],
+                                                [<tcprcv>]]
+                            [--natpf<1-N> [<rulename>],tcp|udp,[<hostip>],
+                                          <hostport>,[<guestip>],<guestport>]
+                            [--natpf<1-N> delete <rulename>]
+                            [--nattftpprefix<1-N> <prefix>]
+                            [--nattftpfile<1-N> <file>]
+                            [--nattftpserver<1-N> <ip>]
+                            [--natbindip<1-N> <ip>
+                            [--natdnspassdomain<1-N> on|off]
+                            [--natdnsproxy<1-N> on|off]
+                            [--natdnshostresolver<1-N> on|off]
+                            [--nataliasmode<1-N> default|[log],[proxyonly],
+                                                         [sameports]]
+														 
+														 
+														 
+														 [--vrde on|off]
+                            [--vrdeextpack default|<name>
+                            [--vrdeproperty <name=[value]>]
+                            [--vrdeport <hostport>]
+                            [--vrdeaddress <hostip>]
+                            [--vrdeauthtype null|external|guest]
+                            [--vrdeauthlibrary default|<name>
+                            [--vrdemulticon on|off]
+

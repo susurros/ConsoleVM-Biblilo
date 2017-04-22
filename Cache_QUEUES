@@ -1,0 +1,11 @@
+https://redis.io/
+https://en.wikipedia.org/wiki/Redis
+https://niwinz.github.io/django-redis/latest/
+http://michal.karzynski.pl/blog/2013/07/14/using-redis-as-django-session-store-and-cache-backend/
+https://realpython.com/blog/python/caching-in-django-with-redis/
+http://stackoverflow.com/questions/3801379/how-can-i-use-redis-with-django
+http://pyvideo.org/djangocon-2012/accelerating-and-enhancing-django-with-redis.html
+
+https://blog.heroku.com/in_deep_with_django_channels_the_future_of_real_time_apps_in_django
+
+https://www.reddit.com/r/django/comments/3nr5uw/do_you_use_the_django_cache_api_with_redis_or/

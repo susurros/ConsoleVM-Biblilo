@@ -1,0 +1,44 @@
+
+
+
+
+
+
+Paquetes intalacion PIP
+https://stackoverflow.com/questions/32618686/how-to-install-pip-in-centos-7
+
+
+Paquetes OS CENTOS 7
+yum install epel-release
+yum install pip python34-pip.noarch python34 git python-virtualenv.noarch
+yum install openssl-devel libffi-devel python34-devel
+yum groupinstall "Development Tools"  # Retirar despues de la instalacion
+yum install postgresql.i686  postgresql-devel.i686
+
+execute
+vurtaulenv Dir
+
+
+Paquetes Python a instalar
+Django-1.9
+paramiko
+mysqlclient
+postgresql-devel.i686 : PostgreSQL development header files and libraries
+postgresql.x86_64 : PostgreSQL client programs
+
+
+
+
+
+
+development tool
+
+Updte virtual env
+
+vbox
+cd /etc/yum.repos.d
+wget http://download.virtualbox.org/virtualbox/rpm/rhel/virtualbox.repo
+yum --enablerepo rpmforge install dkms
+
+yum install kernel-devel
+VirtualBox-5.0.x86_64
